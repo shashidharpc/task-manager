@@ -1,6 +1,6 @@
 # Task Manager
 
-A full-stack Task Management application built using Flask, MongoDB, Bootstrap, and Vanilla JavaScript. Users can register, log in, and manage their tasks through a simple and responsive interface.
+A full-stack Task Management application built using Flask, MongoDB Atlas, Bootstrap, and Vanilla JavaScript. Users can register, log in, and manage their tasks through a simple and responsive interface.
 
 ---
 
@@ -20,21 +20,21 @@ A full-stack Task Management application built using Flask, MongoDB, Bootstrap, 
 
 ## Tech Stack
 
-| Layer           | Technology                         |
-| --------------- | ---------------------------------- |
-| Frontend        | HTML, CSS, JavaScript, Bootstrap 5 |
-| Backend         | Python, Flask                      |
-| Authentication  | Flask-JWT-Extended                 |
-| Database        | MongoDB (PyMongo)                  |
-| Version Control | Git & GitHub                       |
-| Deployment      | Render (Planned)                   |
+| Layer | Technology |
+|--------|------------|
+| Frontend | HTML, CSS, JavaScript, Bootstrap 5 |
+| Backend | Python, Flask |
+| Authentication | Flask-JWT-Extended |
+| Database | MongoDB Atlas (PyMongo) |
+| Version Control | Git & GitHub |
+| Deployment | Render |
 
 ---
 
 ## Project Structure
 
 ```text
-taskmanager/
+task-manager/
 │
 ├── backend/
 │   ├── app.py
@@ -71,7 +71,7 @@ taskmanager/
 Before running the project, install:
 
 * Python 3.10 or higher
-* MongoDB Community Server or MongoDB Atlas
+* MongoDB Atlas account
 * Git (optional)
 
 ---
@@ -81,8 +81,8 @@ Before running the project, install:
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd taskmanager
+git clone https://github.com/shashidharpc/task-manager.git
+cd task-manager
 ```
 
 ### 2. Create Virtual Environment
@@ -119,16 +119,8 @@ Create a `.env` file inside the `backend` directory.
 Example:
 
 ```env
-MONGO_URI=mongodb://localhost:27017/taskmanager
-JWT_SECRET_KEY=my-secret-key
-FLASK_ENV=development
-```
-
-If using MongoDB Atlas:
-
-```env
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanager
-JWT_SECRET_KEY=my-secret-key
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanager?retryWrites=true&w=majority
+JWT_SECRET_KEY=your-secret-key
 ```
 
 ### 6. Run the Application
@@ -137,13 +129,11 @@ JWT_SECRET_KEY=my-secret-key
 python app.py
 ```
 
-Open:
+Open in your browser:
 
 ```text
 http://localhost:5000
 ```
-
-The login page will load automatically.
 
 ---
 
@@ -167,8 +157,6 @@ Request Body:
 }
 ```
 
----
-
 #### Login User
 
 ```http
@@ -183,8 +171,6 @@ Request Body:
   "password": "password123"
 }
 ```
-
----
 
 ### Tasks
 
@@ -201,6 +187,8 @@ GET /tasks
 ```http
 POST /tasks
 ```
+
+Request Body:
 
 ```json
 {
@@ -264,7 +252,7 @@ DELETE /tasks/<task_id>
 ## Trade-offs & Technical Decisions
 
 * Flask was chosen because it is lightweight and easy to maintain.
-* MongoDB was selected for flexible document storage.
+* MongoDB Atlas was selected for cloud-based document storage.
 * Vanilla JavaScript was used instead of a frontend framework to keep the application lightweight.
 * Bootstrap was used to speed up UI development and ensure responsiveness.
 * JWT authentication provides secure stateless authentication.
@@ -285,30 +273,43 @@ DELETE /tasks/<task_id>
 
 ## Deployment
 
-Deployment will be completed using:
+The application is deployed using:
 
-* GitHub (Source Code)
-* MongoDB Atlas (Database)
+* GitHub (Source Code Repository)
+* MongoDB Atlas (Cloud Database)
 * Render (Application Hosting)
+
+The backend, frontend, and database are connected and fully functional.
 
 ---
 
-## Deployment Links
+## Source Code
 
-Frontend:
+GitHub Repository:
 
-```text
-To be added after deployment
-```
+https://github.com/shashidharpc/task-manager
 
-Backend:
+---
 
-```text
-To be added after deployment
-```
+## Live Demo
+
+Application URL:
+
+https://task-manager-zabj.onrender.com
+
+Features Available:
+
+* User Registration
+* User Login
+* Create Tasks
+* Update Tasks
+* Delete Tasks
+* Task Status Management
 
 ---
 
 ## Author
+
 Shashidhar P C
-Task Manager Application 
+
+Task Manager Application built as a full-stack web development project using Flask, MongoDB Atlas, Bootstrap, and JavaScript.
