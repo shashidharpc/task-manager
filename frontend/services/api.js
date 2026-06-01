@@ -1,6 +1,7 @@
 const API_BASE_URL = "https://task-manager-zabj.onrender.com";
 
-function getToken() {
+function getToken() 
+{
   return localStorage.getItem("token");
 }
 
