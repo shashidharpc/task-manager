@@ -1,4 +1,4 @@
-const API_BASE_URL = window.API_BASE_URL || "http://localhost:5000";
+const API_BASE_URL = "https://task-manager-zabj.onrender.com";
 
 function getToken() {
   return localStorage.getItem("token");
